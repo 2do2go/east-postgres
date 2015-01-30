@@ -1,0 +1,17 @@
+{
+	"name": "east-postres",
+	"description": "postgres adapter for \"east\" (node.js database migration tool)",
+	"version": "0.1.0",
+	"author": "Anton Makarov <anton.svet.viktorovich@gmail.com>",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/2do2go/east-postgres.git"
+	},
+	"main": "./lib/adapter",
+	"keywords": [
+		"database", "db", "migrate", "postgres"
+	],
+	"dependencies": {
+		"pg.js": ">=4.1.1"
+	}
+}
