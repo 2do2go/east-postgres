@@ -1,5 +1,5 @@
 {
-	"name": "east-postres",
+	"name": "east-postgres",
 	"description": "postgres adapter for \"east\" (node.js database migration tool)",
 	"version": "0.1.0",
 	"author": "Anton Makarov <anton.svet.viktorovich@gmail.com>",
