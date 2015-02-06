@@ -1,19 +1,19 @@
-# east sqlite
+# east postgres
 
-sqlite adapter for [east](https://github.com/okv/east) (node.js database migration tool) which uses 
-[node-sqlite3](https://github.com/mapbox/node-sqlite3)
+postgresql adapter for [east](https://github.com/okv/east) (node.js database migration tool) which uses 
+[node-postgres](https://github.com/brianc/node-postgres)
 
 All executed migrations names will be stored at `_migrations` table in the
 current database. Object with following properties will be passed to `migrate`
 and `rollback` functions:
 
-* `db` - instance of [node-sqlite3](http://github.com/mapbox/node-sqlite3/wiki/API#databaserunsql-param--callback)
+* `db` - instance of [node-postgres](https://github.com/brianc/node-postgres/wiki/Client)
 
 
 ## Installation
 
 ```sh
-npm install east east-sqlite -g
+npm install east east-postgres -g
 ```
 
 alternatively you could install it locally
@@ -31,12 +31,12 @@ create `.eastrc` file at current directory
 
 ```js
 {
-	"adapter": "east-sqlite",
-	"dbFile": ""
+	"adapter": "east-postgres",
+	"url": ""
 }
 ```
 
-where `dbFile` is file of database which you want to migrate
+where `url` is url for connect to postgresql db: "postgres://someuser:somepassword@somehost:381/sometable"
 
 now we can create some migrations
 
@@ -66,18 +66,10 @@ to 1_apples
 ```js
 exports.migrate = function(client, done) {
 	var db = client.db;
-	var sqlStr = 'insert into things values($id, $name, $color)';
-	db.run(sqlStr, {
-		$id: 1,
-		$name: 'apple',
-		$color: 'red'
-	}, function(err) {
+	var sqlStr = 'insert into things values($1, $2, $3)';
+	db.run(sqlStr, [1, 'apple', 'red'], function(err) {
 		if (err) return done(err);
-		db.run(sqlStr, {
-			$id: 2,
-			$name: 'apple',
-			$color: 'green'
-		}, done);
+		db.run(sqlStr, [2, 'apple', 'green'], done);
 	});
 };
 
@@ -92,11 +84,7 @@ to 2_bananas
 ```js
 exports.migrate = function(client, done) {
 	var db = client.db;
-	db.run('insert into things values($id, $name, $color)', {
-		$id: 3,
-		$name: 'banana',
-		$color: 'yellow'
-	}, done);
+	db.run('insert into things values($1, $2, $3)', [3, 'banana', 'yellow'], done);
 };
 
 exports.rollback = function(client, done) {
