@@ -12,7 +12,7 @@
 		"database", "db", "migrate", "postgres"
 	],
 	"dependencies": {
-		"pg.js": ">=4.1.1",
+		"pg": ">=4.1.1",
 		"pg-connection-string": "0.1.3"
 	}
 }
