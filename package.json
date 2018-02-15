@@ -1,7 +1,7 @@
 {
   "name": "east-postgres",
   "description": "postgres adapter for \"east\" (node.js database migration tool)",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "2do2go team <dev.2do2go@gmail.com>",
   "repository": {
     "type": "git",
