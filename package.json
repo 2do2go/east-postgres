@@ -15,7 +15,7 @@
     "postgres"
   ],
   "peerDependencies": {
-    "pg": ">=4.1.1"
+    "pg": ">=4.x.x <=7.x.x"
   },
   "dependencies": {
     "pg-connection-string": "0.1.3"
