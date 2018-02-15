@@ -32,7 +32,7 @@ create `.eastrc` file at current directory
 ```js
 {
 	"adapter": "east-postgres",
-	"url": ""
+	"url": "postgres://user:password@127.0.0.1:5432/database"
 }
 ```
 
