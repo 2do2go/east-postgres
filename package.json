@@ -1,18 +1,21 @@
 {
-	"name": "east-postgres",
-	"description": "postgres adapter for \"east\" (node.js database migration tool)",
-	"version": "1.0.0",
-	"author": "2do2go team <dev.2do2go@gmail.com>",
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/2do2go/east-postgres.git"
-	},
-	"main": "./lib/adapter",
-	"keywords": [
-		"database", "db", "migrate", "postgres"
-	],
-	"dependencies": {
-		"pg": ">=4.1.1",
-		"pg-connection-string": "0.1.3"
-	}
+  "name": "east-postgres",
+  "description": "postgres adapter for \"east\" (node.js database migration tool)",
+  "version": "1.0.0",
+  "author": "2do2go team <dev.2do2go@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/2do2go/east-postgres.git"
+  },
+  "main": "./lib/adapter",
+  "keywords": [
+    "database",
+    "db",
+    "migrate",
+    "postgres"
+  ],
+  "dependencies": {
+    "pg": ">=4.1.1",
+    "pg-connection-string": "0.1.3"
+  }
 }
